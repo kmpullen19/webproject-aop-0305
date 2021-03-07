@@ -1,6 +1,6 @@
 public aspect TraceAspectPullen {
    pointcut classToTrace(): within(ComponentApp) || within(ServiceApp) || within(DataApp);
-   pointcut methodToTrace():  classToTrace() &&  execution(* *(..));
+   pointcut methodToTrace():  classToTrace() &&  execution(String getName());
 
    before(): methodToTrace() {
       System.out.println("[BGN] " + thisJoinPointStaticPart.getSignature() + ", " +
